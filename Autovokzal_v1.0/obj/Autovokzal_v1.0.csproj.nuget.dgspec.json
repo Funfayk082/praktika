@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Андрей\\Source\\Repos\\praktika12\\Autovokzal_v1.0\\Autovokzal_v1.0.csproj": {}
+    "C:\\Users\\Андрей\\source\\repos\\praktikafin\\Autovokzal_v1.0\\Autovokzal_v1.0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Андрей\\Source\\Repos\\praktika12\\Autovokzal_v1.0\\Autovokzal_v1.0.csproj": {
+    "C:\\Users\\Андрей\\source\\repos\\praktikafin\\Autovokzal_v1.0\\Autovokzal_v1.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Андрей\\Source\\Repos\\praktika12\\Autovokzal_v1.0\\Autovokzal_v1.0.csproj",
+        "projectUniqueName": "C:\\Users\\Андрей\\source\\repos\\praktikafin\\Autovokzal_v1.0\\Autovokzal_v1.0.csproj",
         "projectName": "Autovokzal_v1.0",
-        "projectPath": "C:\\Users\\Андрей\\Source\\Repos\\praktika12\\Autovokzal_v1.0\\Autovokzal_v1.0.csproj",
+        "projectPath": "C:\\Users\\Андрей\\source\\repos\\praktikafin\\Autovokzal_v1.0\\Autovokzal_v1.0.csproj",
         "packagesPath": "C:\\Users\\Андрей\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Андрей\\Source\\Repos\\praktika12\\Autovokzal_v1.0\\obj\\",
+        "outputPath": "C:\\Users\\Андрей\\source\\repos\\praktikafin\\Autovokzal_v1.0\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Андрей\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,7 +40,19 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.0, )"
             }

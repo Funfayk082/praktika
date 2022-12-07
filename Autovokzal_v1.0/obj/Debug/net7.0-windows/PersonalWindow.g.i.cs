@@ -53,7 +53,7 @@ namespace Autovokzal_v1._0 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Autovokzal_v1.0;component/personalwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Autovokzal_v1.0;V1.0.0.0;component/personalwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\PersonalWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
