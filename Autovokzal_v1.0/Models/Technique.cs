@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Autovokzal_v1._0.Models
 {
-    internal class Technique
+    public class Technique
     {
         public int Id { get; set; }
         public string Mark { get; set; }

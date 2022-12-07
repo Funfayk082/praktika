@@ -157,3 +157,6 @@ C:\Users\Андрей\source\repos\praktikafin\Autovokzal_v1.0\obj\Debug\net7.0-
 C:\Users\Андрей\source\repos\praktikafin\Autovokzal_v1.0\obj\Debug\net7.0-windows\Autovokzal_v1.0.genruntimeconfig.cache
 C:\Users\Андрей\source\repos\praktikafin\Autovokzal_v1.0\obj\Debug\net7.0-windows\ref\Autovokzal_v1.0.dll
 C:\Users\Андрей\source\repos\praktikafin\Autovokzal_v1.0\obj\Debug\net7.0-windows\Windows\TechniqueList.g.cs
+C:\Users\Андрей\source\repos\praktikafin\Autovokzal_v1.0\obj\Debug\net7.0-windows\Windows\TechniqueEdit.g.cs
+C:\Users\Андрей\source\repos\praktikafin\Autovokzal_v1.0\obj\Debug\net7.0-windows\Windows\TechniqueList.baml
+C:\Users\Андрей\source\repos\praktikafin\Autovokzal_v1.0\obj\Debug\net7.0-windows\Windows\TechniqueEdit.baml

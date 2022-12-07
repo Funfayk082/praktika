@@ -31,5 +31,11 @@ namespace Autovokzal_v1._0
             DriversList driversList = new DriversList();
             driversList.Show();
         }
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+            TechniqueList techniqueList = new TechniqueList();
+            techniqueList.Show();
+        }
     }
 }
