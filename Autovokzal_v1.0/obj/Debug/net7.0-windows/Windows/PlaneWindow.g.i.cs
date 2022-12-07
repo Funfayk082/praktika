@@ -53,7 +53,7 @@ namespace Autovokzal_v1._0 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Autovokzal_v1.0;V1.0.0.0;component/windows/planewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Autovokzal_v1.0;component/windows/planewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Windows\PlaneWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

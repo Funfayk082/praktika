@@ -21,7 +21,6 @@ namespace Autovokzal_v1._0
     /// </summary>
     public partial class PlaneWindow : Window
     {
-        Driver driver = new Driver();
         public PlaneWindow()
         {
             InitializeComponent();

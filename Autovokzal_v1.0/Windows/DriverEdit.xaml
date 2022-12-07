@@ -37,7 +37,7 @@
         <TextBlock Text="Дата выдачи" Grid.Row="3" Margin="8,8,8,8" />
         <TextBlock Text="Дата действительности" TextWrapping="Wrap" Grid.Row="4" Margin="8,8,8,8" />
 
-        <TextBox x:Name="Number" Text="{Binding DriverLicense}" Grid.Column="1" Margin="8,8,8,8" />
+        <TextBox x:Name="Number" Text="{Binding DriveLicense}" Grid.Column="1" Margin="8,8,8,8" />
         <TextBox x:Name="WhoIsIt" Text="{Binding DriverLicGetter}" Grid.Column="1" Grid.Row="1" Margin="8,8,8,8"/>
         <TextBox x:Name="Kat" Text="{Binding KatTS}" Grid.Column="1" Grid.Row="2" Margin="8,8,8,8"/>
         <TextBox x:Name="FD" Text="{Binding GetDate}" Grid.Column="1" Grid.Row="3" Margin="8,8,8,8"/>

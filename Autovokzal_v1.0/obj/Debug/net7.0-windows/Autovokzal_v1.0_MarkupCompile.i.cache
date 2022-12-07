@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\Андрей\source\repos\praktikafin\Autovokzal_v1.0\App.xaml
-8-85244994
+9-1134730388
 
-16-1881056286
+171361572374
 216-1448308459
-MainWindow.xaml;Windows\DriverEdit.xaml;Windows\DriversList.xaml;Windows\FinanceWindow.xaml;Windows\HR_dep.xaml;Windows\PersonalWindow.xaml;Windows\PlaneWindow.xaml;Windows\ProdWindow.xaml;
+MainWindow.xaml;Windows\DriverEdit.xaml;Windows\DriversList.xaml;Windows\FinanceWindow.xaml;Windows\HR_dep.xaml;Windows\PersonalWindow.xaml;Windows\PlaneWindow.xaml;Windows\ProdWindow.xaml;Windows\TechniqueList.xaml;
 
-False
+True
 

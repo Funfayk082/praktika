@@ -8,25 +8,34 @@
          Title="Отдел кадров" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition/>
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <ListBox x:Name="personalList" ItemsSource="{Binding}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Short_Id}" FontSize="13" />
-                        <TextBlock Text="{Binding Name}" FontSize="13" />
-                        <TextBlock Text="{Binding Surname}" FontSize="13" />
-                        <TextBlock Text="{Binding Patronymic}" FontSize="13" />
-                        <TextBlock Text="{Binding Date}" FontSize="13" />
-                        <TextBlock Text="{Binding Otdel}" FontSize="13" />
-                        <TextBlock Text="{Binding Phone}" FontSize="13" />
-                    </StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="160"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Short_Id}" FontSize="13" HorizontalAlignment="Center" Margin="5" />
+                        <TextBlock Text="{Binding Name}" FontSize="13" Grid.Column="1" HorizontalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="{Binding Surname}" FontSize="13" Grid.Column="2" HorizontalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="{Binding Patronymic}" FontSize="13" Grid.Column="3" HorizontalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="{Binding Date}" FontSize="13" Grid.Column="4" HorizontalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="{Binding Otdel}" FontSize="13" Grid.Column="5" HorizontalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="{Binding Phone}" FontSize="13" Grid.Column="6" HorizontalAlignment="Center" Margin="5"/>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Добавить" Margin="10" Click="Add_Click" />
             <Button Content="Изменить" Margin="10" Click="Edit_Click"  />
             <Button Content="Удалить" Margin="10" Click="Delete_Click"  />
