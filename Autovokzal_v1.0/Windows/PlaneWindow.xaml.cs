@@ -37,5 +37,11 @@ namespace Autovokzal_v1._0
             TechniqueList techniqueList = new TechniqueList();
             techniqueList.Show();
         }
+
+        private void Button_Click3(object sender, RoutedEventArgs e)
+        {
+            RoutesList routesList = new RoutesList();
+            routesList.Show();
+        }
     }
 }

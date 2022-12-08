@@ -6,7 +6,58 @@
         xmlns:local="clr-namespace:Autovokzal_v1._0.Windows"
         mc:Ignorable="d"
         Title="TechniqueEdit" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="8" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="8" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="MinWidth" Value="60" />
+            <Setter Property="Margin" Value="8" />
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="60"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Марка" TextWrapping="Wrap" Margin="8,8,8,8"/>
+        <TextBlock Text="Модель" Grid.Row="1" Margin="8,8,8,8"/>
+        <TextBlock Text="Цвет" TextWrapping="Wrap" Grid.Row="2" Margin="8,8,8,8"/>
+        <TextBlock Text="Госномер" Grid.Row="3" Margin="8,8,8,8" />
+        <TextBlock Text="Тип назначения" TextWrapping="Wrap" Grid.Row="4" Margin="8,8,8,8" />
+        <TextBlock Text="Кол-во перевозимых пассажиров" TextWrapping="Wrap" Grid.Row="5" Margin="8,8,8,8"/>
+        <TextBlock Text="Расход топлива" TextWrapping="Wrap" Grid.Row="6" Margin="8,8,8,8" />
+        <TextBlock Text="Грузоподъёмность" TextWrapping="Wrap" Grid.Row="7" Margin="8,8,3,8" />
+        <TextBlock Text="VIN" TextWrapping="Wrap" Grid.Row="8" Margin="8,8,8,8" />
+
+        <TextBox x:Name="Mark" Text="{Binding Mark}" Grid.Column="1" Margin="8,8,8,8" />
+        <TextBox x:Name="Model" Text="{Binding Model}" Grid.Column="1" Grid.Row="1" Margin="8,8,8,8"/>
+        <TextBox x:Name="Color" Text="{Binding Color}" Grid.Column="1" Grid.Row="2" Margin="8,8,8,8"/>
+        <TextBox x:Name="GovNumber" Text="{Binding GovNumber}" Grid.Column="1" Grid.Row="3" Margin="8,8,8,8"/>
+        <TextBox x:Name="Type" Text="{Binding Type}" Grid.Column="1" Grid.Row="4" Margin="8,8,8,8" />
+        <TextBox x:Name="Volume" Text="{Binding Volume}" Grid.Column="1" Grid.Row="5" Margin="8,8,8,8" />
+        <TextBox x:Name="FuelCons" Text="{Binding FuelCons}" Grid.Column="1" Grid.Row="6" Margin="8,8,8,8" />
+        <TextBox x:Name="LC" Text="{Binding LC}" Grid.Column="1" Grid.Row="7" Margin="8,8,8,8" />
+        <TextBox x:Name="VIN" Text="{Binding VIN}" Grid.Column="1" Grid.Row="8" Margin="8,8,8,8" />
+
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="9" Grid.Column="1" Width="154">
+            <Button IsDefault="True" Click="Accept_Click" >Сохранить</Button>
+            <Button IsCancel="True" >Отмена</Button>
+        </StackPanel>
     </Grid>
 </Window>

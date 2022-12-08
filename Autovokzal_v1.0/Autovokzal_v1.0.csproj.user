@@ -19,6 +19,12 @@
     <Compile Update="Windows\PlaneWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\RoutesEdit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\RoutesList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\TechniqueEdit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +52,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\PlaneWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\RoutesEdit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\RoutesList.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\TechniqueEdit.xaml">
