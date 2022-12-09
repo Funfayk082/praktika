@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tigIB1JQyXb8ZqCADw95y51gNAe0dDKvmzXqYqzvENAptPC972jntdjVKCa8ri3iLgn0Lodc5GKXEf+pzGeLOw==",
+  "dgSpecHash": "pvPycp43Bb1Jfx6qyBsCUWS6ehzoGS/GGYiKwpIzQPdP006m6OUYiZLhdre54c7mB4oqp9oeYilsbEG8byoFFQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Андрей\\Source\\Repos\\praktika12\\Autovokzal_v1.0\\Autovokzal_v1.0.csproj",
+  "projectFilePath": "C:\\Users\\Андрей\\source\\repos\\praktikafin\\Autovokzal_v1.0\\Autovokzal_v1.0.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Андрей\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.0\\microsoft.data.sqlite.core.7.0.0.nupkg.sha512",
     "C:\\Users\\Андрей\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
