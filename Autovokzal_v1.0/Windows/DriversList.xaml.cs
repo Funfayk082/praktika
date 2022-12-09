@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Autovokzal_v1._0.Windows
 {
-    /// <summary>
-    /// Логика взаимодействия для DriversList.xaml
-    /// </summary>
     public partial class DriversList : Window
     {
         ApplicationContext db = new ApplicationContext();

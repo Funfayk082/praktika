@@ -21,7 +21,6 @@ namespace Autovokzal_v1._0
     /// </summary>
     public partial class PlaneWindow : Window
     {
-        Driver driver = new Driver();
         public PlaneWindow()
         {
             InitializeComponent();
@@ -31,6 +30,18 @@ namespace Autovokzal_v1._0
         {
             DriversList driversList = new DriversList();
             driversList.Show();
+        }
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+            TechniqueList techniqueList = new TechniqueList();
+            techniqueList.Show();
+        }
+
+        private void Button_Click3(object sender, RoutedEventArgs e)
+        {
+            RoutesList routesList = new RoutesList();
+            routesList.Show();
         }
     }
 }

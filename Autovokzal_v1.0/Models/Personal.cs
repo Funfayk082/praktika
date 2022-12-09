@@ -13,7 +13,7 @@ namespace Autovokzal_v1._0.Models
         public string? Name { get; set; }
         public string? Surname { get; set; }
         public string? Patronymic { get; set; }
-        public DateTime? Date { get; set; }
+        public DateOnly? Date { get; set; }
         public string? Otdel { get; set; } = null!;
         public string Phone { get; set; }
     }

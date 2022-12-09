@@ -14,13 +14,20 @@
         <ListBox x:Name="driverlList" ItemsSource="{Binding}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding DriveLicense}" FontSize="13" />
-                        <TextBlock Text="{Binding DriverLicGetter}" FontSize="13" />
-                        <TextBlock Text="{Binding KatTS}" FontSize="13" />
-                        <TextBlock Text="{Binding GetDate}" FontSize="13" />
-                        <TextBlock Text="{Binding LastDate}" FontSize="13" />
-                    </StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="120"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding DriveLicense}" FontSize="13" Grid.Column="0" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding DriverLicGetter}" FontSize="13" Grid.Column="1" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding KatTS}" FontSize="13" Grid.Column="2" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding GetDate}" FontSize="13" Grid.Column="3" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding LastDate}" FontSize="13" Grid.Column="4" HorizontalAlignment="Center"/>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
