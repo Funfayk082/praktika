@@ -4,12 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using OfficeOpenXml;
 using OfficeOpenXml.FormulaParsing;
+using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -31,13 +33,14 @@ namespace Autovokzal_v1._0
     public partial class HR_dep : Window
     {
         ApplicationContext db = new ApplicationContext();
+        
         public HR_dep()
         {
             InitializeComponent();
 
             Loaded += HR_dep_Loaded;
         }
-
+        
         private void HR_dep_Loaded(object sender, RoutedEventArgs e)
         {
             db.Database.EnsureCreated();
@@ -108,26 +111,40 @@ namespace Autovokzal_v1._0
 
                 string sqlQuery = "SELECT * FROM Personal";
 
-                DataTable dataTable = loadExternalDataSet(sqlQuery);
-
                 ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Personal");
 
-                worksheet.Cells["A1"].LoadFromDataTable(dataTable, true);
+                DataTable dataTable = loadExternalDataSet(sqlQuery, db, worksheet);
+
                 excelPackage.SaveAs(System.IO.Path.Combine(path, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".xlsx"), "password");
             }
         }
-
-        public static DataTable loadExternalDataSet(string sqlQuery)
+        
+        private static DataTable loadExternalDataSet(string sqlQuery, ApplicationContext db, ExcelWorksheet worksheet)
         {
             DataTable dt = new DataTable();
-            dt.Columns.Add(new DataColumn("ID"));
-            dt.Columns.Add(new DataColumn("Имя"));
-            dt.Columns.Add(new DataColumn("Фамилия"));
-            dt.Columns.Add(new DataColumn("Отчество"));
-            dt.Columns.Add(new DataColumn("Дата рождения"));
-            dt.Columns.Add(new DataColumn("Отдел"));
-            dt.Columns.Add(new DataColumn("Номер"));
-            dt.Rows.Add(dt);
+            worksheet.Row(1).Style.Fill.PatternType = ExcelFillStyle.Solid;
+            worksheet.Cells["A1:G1"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGreen);
+            worksheet.Cells["A1"].Value = "Короткий ID";
+            worksheet.Cells["B1"].Value = "Имя";
+            worksheet.Cells["C1"].Value = "Фамилия";
+            worksheet.Cells["D1"].Value = "Отчество";
+            worksheet.Cells["E1"].Value = "Дата рождения";
+            worksheet.Cells["F1"].Value = "Отдел";
+            worksheet.Cells["G1"].Value = "Номер";
+            int i = 0;
+            while (i < db.Personals.Count())
+            {
+                var p = db.Personals.Find(i+1);
+                worksheet.Cells["A" + (i + 2)].Value = p.Short_Id;
+                worksheet.Cells["B" + (i + 2)].Value = p.Name;
+                worksheet.Cells["C" + (i + 2)].Value = p.Surname;
+                worksheet.Cells["D" + (i + 2)].Value = p.Phone;
+                worksheet.Cells["E" + (i + 2)].Value = p.Date;
+                worksheet.Cells["F" + (i + 2)].Value = p.Otdel;
+                worksheet.Cells["G" + (i + 2)].Value = p.Phone;
+                i++;
+            }
+            dt.AcceptChanges();
             using (SqlConnection connection = new SqlConnection())
             using (SqlDataAdapter adapter = new SqlDataAdapter(sqlQuery, connection))
             {
