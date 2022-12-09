@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Андрей\Source\Repos\praktika12\Autovokzal_v1.0\obj\Debug\net7.0-windows\
+C:\Users\Андрей\source\repos\praktikafin\Autovokzal_v1.0\obj\Debug\net7.0-windows\
 Autovokzal_v1._0
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-C:\Users\Андрей\Source\Repos\praktika12\Autovokzal_v1.0\App.xaml
-6-326103138
+C:\Users\Андрей\source\repos\praktikafin\Autovokzal_v1.0\App.xaml
+12-2049574125
 
-10328450035
-216-1448308459
-FinanceWindow.xaml;HR_dep.xaml;MainWindow.xaml;PersonalWindow.xaml;PlaneWindow.xaml;ProdWindow.xaml;
+19-568005951
+228-1241704163
+MainWindow.xaml;Windows\DriverEdit.xaml;Windows\DriversList.xaml;Windows\FinanceWindow.xaml;Windows\HR_dep.xaml;Windows\PersonalWindow.xaml;Windows\PlaneWindow.xaml;Windows\ProdWindow.xaml;Windows\RoutesEdit.xaml;Windows\RoutesList.xaml;Windows\TechniqueEdit.xaml;Windows\TechniqueList.xaml;
 
 False
 
