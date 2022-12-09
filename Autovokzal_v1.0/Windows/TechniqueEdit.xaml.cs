@@ -31,16 +31,17 @@ namespace Autovokzal_v1._0.Windows
 
         void Accept_Click(object sender, RoutedEventArgs e)
         {
-            //if (string.IsNullOrEmpty(Number.Text) || (string.IsNullOrEmpty(WhoIsIt.Text)) || (string.IsNullOrEmpty(Kat.Text)) ||
-            //    (string.IsNullOrEmpty(FD.Text)) || (string.IsNullOrEmpty(LD.Text)))
-            //{
-            //    MessageBox.Show("Все поля не должны быть пустыми!", "Пустые поля", MessageBoxButton.OK, MessageBoxImage.Error);
-            //    Close();
-            //}
-            //else
-            //{
-            //    DialogResult = true;
-            //}
+            if (string.IsNullOrEmpty(Mark.Text) || (string.IsNullOrEmpty(Model.Text)) || (string.IsNullOrEmpty(Color.Text)) ||
+                (string.IsNullOrEmpty(GovNumber.Text)) || (string.IsNullOrEmpty(Type.Text)) || (string.IsNullOrEmpty(Volume.Text)) ||
+                (string.IsNullOrEmpty(FuelCons.Text)) || (string.IsNullOrEmpty(LC.Text)) || (string.IsNullOrEmpty(VIN.Text)))
+            {
+                MessageBox.Show("Все поля не должны быть пустыми!", "Пустые поля", MessageBoxButton.OK, MessageBoxImage.Error);
+                Close();
+            }
+            else
+            {
+                DialogResult = true;
+            }
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Autovokzal_v1._0.Windows
             InitializeComponent();
         }
 
-        private void RouteList_Loaded(object sender, RoutedEventArgs e)
+        private void RoutesList_Loaded(object sender, RoutedEventArgs e)
         {
             db.Database.EnsureCreated();
             db.Routes.Load();
@@ -43,6 +43,53 @@ namespace Autovokzal_v1._0.Windows
                 db.Routes.Add(route);
                 db.SaveChanges();
             }
+        }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            Route? route = routesList.SelectedItem as Route;
+            if (route is null) return;
+
+            RoutesEdit routesEdit = new RoutesEdit(new Route
+            {
+                Id = route.Id,
+                RouteName = route.RouteName,
+                RouteStartDate = route.RouteStartDate,
+                RouteEndDate = route.RouteEndDate,
+                RouteCode = route.RouteCode,
+                Price = route.Price,
+                isClosed = route.isClosed,
+                WorkingDays = route.WorkingDays,
+                isWEW = route.isWEW,
+                isFYear = route.isFYear,
+            });
+            
+            if (routesEdit.ShowDialog() == true)
+            {
+                route = db.Routes.Find(routesEdit.Route.Id);
+                if (route != null)
+                {
+                    route.RouteName = routesEdit.Route.RouteName;
+                    route.RouteStartDate = routesEdit.Route.RouteStartDate;
+                    route.RouteEndDate = routesEdit.Route.RouteEndDate;
+                    route.RouteCode = routesEdit.Route.RouteCode;
+                    route.Price = routesEdit.Route.Price;
+                    route.isClosed = routesEdit.Route.isClosed;
+                    route.WorkingDays = routesEdit.Route.WorkingDays;
+                    route.isWEW = routesEdit.Route.isWEW;
+                    route.isFYear = routesEdit.Route.isFYear;
+                    db.SaveChanges();
+                    routesList.Items.Refresh();
+                }
+            }
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            Route? route = routesList.SelectedItem as Route;
+            if (route is null) return;
+            db.Routes.Remove(route);
+            db.SaveChanges();
         }
     }
 }

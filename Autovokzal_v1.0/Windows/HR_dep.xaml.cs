@@ -1,7 +1,16 @@
 ﻿using Autovokzal_v1._0.Models;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using OfficeOpenXml;
+using OfficeOpenXml.FormulaParsing;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +20,11 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.WebRequestMethods;
 
 namespace Autovokzal_v1._0
 {
@@ -86,6 +97,49 @@ namespace Autovokzal_v1._0
             if (personal is null) return;
             db.Personals.Remove(personal);
             db.SaveChanges();
+        }
+
+
+        private void Report_Click(object sender, RoutedEventArgs e)
+        {
+            string path = System.IO.Path.GetFullPath(@"..\..\..");
+            using (ExcelPackage excelPackage = new ExcelPackage(System.IO.Path.Combine(path, "Отчёт от "+DateOnly.FromDateTime(DateTime.Today) + ".xlsx"), "password"))
+            {
+
+                string sqlQuery = "SELECT * FROM Personal";
+
+                DataTable dataTable = loadExternalDataSet(sqlQuery);
+
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Personal");
+
+                worksheet.Cells["A1"].LoadFromDataTable(dataTable, true);
+                excelPackage.SaveAs(System.IO.Path.Combine(path, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".xlsx"), "password");
+            }
+        }
+
+        public static DataTable loadExternalDataSet(string sqlQuery)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add(new DataColumn("ID"));
+            dt.Columns.Add(new DataColumn("Имя"));
+            dt.Columns.Add(new DataColumn("Фамилия"));
+            dt.Columns.Add(new DataColumn("Отчество"));
+            dt.Columns.Add(new DataColumn("Дата рождения"));
+            dt.Columns.Add(new DataColumn("Отдел"));
+            dt.Columns.Add(new DataColumn("Номер"));
+            dt.Rows.Add(dt);
+            using (SqlConnection connection = new SqlConnection())
+            using (SqlDataAdapter adapter = new SqlDataAdapter(sqlQuery, connection))
+            {
+                try
+                {
+                    adapter.Fill(dt);
+                }
+                catch
+                {
+                }
+            }
+            return dt;
         }
     }
 }

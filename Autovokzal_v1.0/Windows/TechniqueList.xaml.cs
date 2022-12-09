@@ -50,30 +50,38 @@ namespace Autovokzal_v1._0.Windows
             Technique? technique = techniqueList.SelectedItem as Technique;
             if (technique is null) return;
 
-            //TechniqueEdit techniqueEdit = new TechniqueEdit(new Technique
-            //{
-            //    Id = technique.Id,
-            //    DriveLicense = technique.DriveLicense,
-            //    DriverLicGetter = technique.DriverLicGetter,
-            //    KatTS = technique.KatTS,
-            //    GetDate = technique.GetDate,
-            //    LastDate = technique.LastDate,
-            //});
-            //
-            //if (techniqueEdit.ShowDialog() == true)
-            //{
-            //    technique = db.Techniques.Find(techniqueEdit.Technique.Id);
-            //    if (technique != null)
-            //    {
-            //        technique.DriveLicense = techniqueEdit.Driver.DriveLicense;
-            //        technique.DriverLicGetter = techniqueEdit.Driver.DriverLicGetter;
-            //        technique.KatTS = techniqueEdit.Driver.KatTS;
-            //        technique.GetDate = techniqueEdit.Driver.GetDate;
-            //        technique.LastDate = techniqueEdit.Driver.LastDate;
-            //        db.SaveChanges();
-            //        techniqueList.Items.Refresh();
-            //    }
-            //}
+            TechniqueEdit techniqueEdit = new TechniqueEdit(new Technique
+            {
+                Id = technique.Id,
+                Mark = technique.Mark,
+                Model = technique.Model,
+                Color = technique.Color,
+                GovNumber = technique.GovNumber,
+                Type = technique.Type,
+                Volume = technique.Volume,
+                FuelCons = technique.FuelCons,
+                LC = technique.LC,
+                VIN = technique.VIN
+            });
+            
+            if (techniqueEdit.ShowDialog() == true)
+            {
+                technique = db.Techniques.Find(techniqueEdit.Technique.Id);
+                if (technique != null)
+                {
+                    technique.Mark = techniqueEdit.Technique.Mark;
+                    technique.Model = techniqueEdit.Technique.Model;
+                    technique.Color = techniqueEdit.Technique.Color;
+                    technique.GovNumber = techniqueEdit.Technique.GovNumber;
+                    technique.Type = techniqueEdit.Technique.Type;
+                    technique.Volume = techniqueEdit.Technique.Volume;
+                    technique.FuelCons = techniqueEdit.Technique.FuelCons;
+                    technique.LC = techniqueEdit.Technique.LC;
+                    technique.VIN = techniqueEdit.Technique.VIN;
+                    db.SaveChanges();
+                    techniqueList.Items.Refresh();
+                }
+            }
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)

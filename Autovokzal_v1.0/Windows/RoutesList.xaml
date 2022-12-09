@@ -11,7 +11,7 @@
             <RowDefinition />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <ListBox x:Name="techniqueList" ItemsSource="{Binding}">
+        <ListBox x:Name="routesList" ItemsSource="{Binding}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

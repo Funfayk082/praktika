@@ -30,7 +30,16 @@ namespace Autovokzal_v1._0.Windows
 
         private void Accept_Click(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(RouteName.Text) || (string.IsNullOrEmpty(RouteStartDate.Text)) || (string.IsNullOrEmpty(RouteEndDate.Text)) ||
+               (string.IsNullOrEmpty(Price.Text)) || (string.IsNullOrEmpty(RouteCode.Text)) || (string.IsNullOrEmpty(isClosed.Text)) ||
+               (string.IsNullOrEmpty(isWEW.Text)) || (string.IsNullOrEmpty(isFYear.Text)) || (string.IsNullOrEmpty(WorkingDays.Text)))
+            {
+                MessageBox.Show("Все поля не должны быть пустыми!", "Пустые поля", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                DialogResult = true;
+            }
         }
     }
 }

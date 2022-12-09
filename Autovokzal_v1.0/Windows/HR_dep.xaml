@@ -39,6 +39,7 @@
             <Button Content="Добавить" Margin="10" Click="Add_Click" />
             <Button Content="Изменить" Margin="10" Click="Edit_Click"  />
             <Button Content="Удалить" Margin="10" Click="Delete_Click"  />
+            <Button Content="Составить отчёт" Margin="10" Background="GreenYellow" Click="Report_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>

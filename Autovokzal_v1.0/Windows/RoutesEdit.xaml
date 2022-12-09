@@ -45,15 +45,15 @@
         <TextBlock Text="По выходным" TextWrapping="Wrap" Grid.Row="7" Margin="8,8,3,8" />
         <TextBlock Text="Круглый год" TextWrapping="Wrap" Grid.Row="8" Margin="8,8,8,8" />
 
-        <TextBox x:Name="Mark" Text="{Binding RouteName}" Grid.Column="1" Margin="8,8,8,8" />
-        <TextBox x:Name="Model" Text="{Binding RouteStartDate}" Grid.Column="1" Grid.Row="1" Margin="8,8,8,8"/>
-        <TextBox x:Name="Color" Text="{Binding RouteEndDate}" Grid.Column="1" Grid.Row="2" Margin="8,8,8,8"/>
-        <TextBox x:Name="GovNumber" Text="{Binding RouteCode}" Grid.Column="1" Grid.Row="3" Margin="8,8,8,8"/>
-        <TextBox x:Name="Type" Text="{Binding Price}" Grid.Column="1" Grid.Row="4" Margin="8,8,8,8" />
-        <TextBox x:Name="Volume" Text="{Binding isClosed}" Grid.Column="1" Grid.Row="5" Margin="8,8,8,8" />
-        <TextBox x:Name="FuelCons" Text="{Binding WorkingDays}" Grid.Column="1" Grid.Row="6" Margin="8,8,8,8" />
-        <TextBox x:Name="LC" Text="{Binding isWEW}" Grid.Column="1" Grid.Row="7" Margin="8,8,8,8" />
-        <TextBox x:Name="VIN" Text="{Binding isFYear}" Grid.Column="1" Grid.Row="8" Margin="8,8,8,8" />
+        <TextBox x:Name="RouteName" Text="{Binding RouteName}" Grid.Column="1" Margin="8,8,8,8" />
+        <TextBox x:Name="RouteStartDate" Text="{Binding RouteStartDate}" Grid.Column="1" Grid.Row="1" Margin="8,8,8,8"/>
+        <TextBox x:Name="RouteEndDate" Text="{Binding RouteEndDate}" Grid.Column="1" Grid.Row="2" Margin="8,8,8,8"/>
+        <TextBox x:Name="RouteCode" Text="{Binding RouteCode}" Grid.Column="1" Grid.Row="3" Margin="8,8,8,8"/>
+        <TextBox x:Name="Price" Text="{Binding Price}" Grid.Column="1" Grid.Row="4" Margin="8,8,8,8" />
+        <TextBox x:Name="isClosed" Text="{Binding isClosed}" Grid.Column="1" Grid.Row="5" Margin="8,8,8,8" />
+        <TextBox x:Name="WorkingDays" Text="{Binding WorkingDays}" Grid.Column="1" Grid.Row="6" Margin="8,8,8,8" />
+        <TextBox x:Name="isWEW" Text="{Binding isWEW}" Grid.Column="1" Grid.Row="7" Margin="8,8,8,8" />
+        <TextBox x:Name="isFYear" Text="{Binding isFYear}" Grid.Column="1" Grid.Row="8" Margin="8,8,8,8" />
 
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="9" Grid.Column="1" Width="154">
             <Button IsDefault="True" Click="Accept_Click" >Сохранить</Button>
