@@ -25,6 +25,8 @@ namespace Autovokzal_v1._0.Windows
         public TechniqueList()
         {
             InitializeComponent();
+
+            Loaded += TechniqueList_Loaded;
         }
 
         private void TechniqueList_Loaded(object sender, RoutedEventArgs e)

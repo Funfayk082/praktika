@@ -16,17 +16,17 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="120"/>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="70"/>
-                            <ColumnDefinition Width="120"/>
-                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding DriveLicense}" FontSize="13" Grid.Column="0" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{Binding DriverLicGetter}" FontSize="13" Grid.Column="1" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{Binding KatTS}" FontSize="13" Grid.Column="2" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{Binding GetDate}" FontSize="13" Grid.Column="3" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{Binding LastDate}" FontSize="13" Grid.Column="4" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding DriveLicense}" FontSize="13" Grid.Column="0" HorizontalAlignment="Center" Margin="10"/>
+                        <TextBlock Text="{Binding DriverLicGetter}" FontSize="13" Grid.Column="1" HorizontalAlignment="Center" Margin="10"/>
+                        <TextBlock Text="{Binding KatTS}" FontSize="13" Grid.Column="2" HorizontalAlignment="Center" Margin="10"/>
+                        <TextBlock Text="{Binding GetDate}" FontSize="13" Grid.Column="3" HorizontalAlignment="Center" Margin="10"/>
+                        <TextBlock Text="{Binding LastDate}" FontSize="13" Grid.Column="4" HorizontalAlignment="Center" Margin="10"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

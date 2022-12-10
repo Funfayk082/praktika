@@ -25,6 +25,8 @@ namespace Autovokzal_v1._0.Windows
         public RoutesList()
         {
             InitializeComponent();
+
+            Loaded += RoutesList_Loaded;
         }
 
         private void RoutesList_Loaded(object sender, RoutedEventArgs e)

@@ -18,5 +18,6 @@ namespace Autovokzal_v1._0.Models
         public string WorkingDays { get; set; }
         public bool isWEW { get; set; }
         public bool isFYear { get; set; }
+        public List<Trip> Trips { get; set; }
     }
 }
