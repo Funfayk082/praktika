@@ -33,14 +33,14 @@ namespace Autovokzal_v1._0
     public partial class HR_dep : Window
     {
         ApplicationContext db = new ApplicationContext();
-        
+
         public HR_dep()
         {
             InitializeComponent();
 
             Loaded += HR_dep_Loaded;
         }
-        
+
         private void HR_dep_Loaded(object sender, RoutedEventArgs e)
         {
             db.Database.EnsureCreated();
@@ -106,22 +106,21 @@ namespace Autovokzal_v1._0
         private void Report_Click(object sender, RoutedEventArgs e)
         {
             string path = System.IO.Path.GetFullPath(@"..\..\..");
-            using (ExcelPackage excelPackage = new ExcelPackage(System.IO.Path.Combine(path, "Отчёт от "+DateOnly.FromDateTime(DateTime.Today) + ".xlsx"), "password"))
+            using (ExcelPackage excelPackage = new ExcelPackage(System.IO.Path.Combine(path, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".xlsx")))
             {
 
                 string sqlQuery = "SELECT * FROM Personal";
 
                 ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Personal");
 
-                DataTable dataTable = loadExternalDataSet(sqlQuery, db, worksheet);
+                loadExternalDataSet(sqlQuery, db, worksheet);
 
-                excelPackage.SaveAs(System.IO.Path.Combine(path, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".xlsx"), "password");
+                excelPackage.SaveAs(System.IO.Path.Combine(path, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".xlsx"));
             }
         }
-        
-        private static DataTable loadExternalDataSet(string sqlQuery, ApplicationContext db, ExcelWorksheet worksheet)
+
+        private static void loadExternalDataSet(string sqlQuery, ApplicationContext db, ExcelWorksheet worksheet)
         {
-            DataTable dt = new DataTable();
             worksheet.Row(1).Style.Fill.PatternType = ExcelFillStyle.Solid;
             worksheet.Cells["A1:G1"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGreen);
             worksheet.Cells["A1"].Value = "Короткий ID";
@@ -134,7 +133,7 @@ namespace Autovokzal_v1._0
             int i = 0;
             while (i < db.Personals.Count())
             {
-                var p = db.Personals.Find(i+1);
+                var p = db.Personals.Find(i + 1);
                 worksheet.Cells["A" + (i + 2)].Value = p.Short_Id;
                 worksheet.Cells["B" + (i + 2)].Value = p.Name;
                 worksheet.Cells["C" + (i + 2)].Value = p.Surname;
@@ -144,19 +143,11 @@ namespace Autovokzal_v1._0
                 worksheet.Cells["G" + (i + 2)].Value = p.Phone;
                 i++;
             }
-            dt.AcceptChanges();
             using (SqlConnection connection = new SqlConnection())
             using (SqlDataAdapter adapter = new SqlDataAdapter(sqlQuery, connection))
             {
-                try
-                {
-                    adapter.Fill(dt);
-                }
-                catch
-                {
-                }
+                return;
             }
-            return dt;
         }
     }
 }
