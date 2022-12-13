@@ -116,7 +116,7 @@ namespace Autovokzal_v1._0
                 worksheet.Cells["A" + (i + 2)].Value = p.Short_Id;
                 worksheet.Cells["B" + (i + 2)].Value = p.Name;
                 worksheet.Cells["C" + (i + 2)].Value = p.Surname;
-                worksheet.Cells["D" + (i + 2)].Value = p.Phone;
+                worksheet.Cells["D" + (i + 2)].Value = p.Patronymic;
                 worksheet.Cells["E" + (i + 2)].Value = p.Date;
                 worksheet.Cells["F" + (i + 2)].Value = p.Otdel;
                 worksheet.Cells["G" + (i + 2)].Value = p.Phone;
