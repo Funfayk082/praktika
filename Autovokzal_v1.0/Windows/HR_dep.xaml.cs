@@ -84,8 +84,8 @@ namespace Autovokzal_v1._0
 
         private void Report_Click(object sender, RoutedEventArgs e)
         {
-            string path = System.IO.Path.GetFullPath(@"..\..\..");
-            using (ExcelPackage excelPackage = new ExcelPackage(System.IO.Path.Combine(path, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".xlsx")))
+            string pathToRep = System.IO.Path.GetFullPath(@"..\..\..\Reports\");
+            using (ExcelPackage excelPackage = new ExcelPackage(System.IO.Path.Combine(pathToRep, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".xlsx")))
             {
 
                 string sqlQuery = "SELECT * FROM Personal";
@@ -94,7 +94,7 @@ namespace Autovokzal_v1._0
 
                 loadExternalDataSet(sqlQuery, db, worksheet);
 
-                excelPackage.SaveAs(System.IO.Path.Combine(path, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".xlsx"));
+                excelPackage.SaveAs(System.IO.Path.Combine(pathToRep, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".xlsx"));
             }
         }
 
