@@ -1,11 +1,14 @@
 ﻿using Autovokzal_v1._0.Models;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Autovokzal_v1._0
 {
@@ -95,6 +98,19 @@ namespace Autovokzal_v1._0
                 loadExternalDataSet(sqlQuery, db, worksheet);
 
                 excelPackage.SaveAs(System.IO.Path.Combine(pathToRep, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".xlsx"));
+            }
+
+            for (int i = 0; i < personalList.Items.Count; i++)
+            {
+                Personal personal = personalList.Items[i] as Personal;
+                File.AppendAllText(System.IO.Path.Combine(pathToRep, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".json"), JsonConvert.SerializeObject(personal));
+
+                // serialize JSON directly to a file
+                using (StreamWriter file = File.AppendText(System.IO.Path.Combine(pathToRep, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".json")))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Serialize(file, personal);
+                }
             }
         }
 
