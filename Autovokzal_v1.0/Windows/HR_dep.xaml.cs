@@ -105,12 +105,6 @@ namespace Autovokzal_v1._0
                 Personal personal = personalList.Items[i] as Personal;
                 File.AppendAllText(System.IO.Path.Combine(pathToRep, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".json"), JsonConvert.SerializeObject(personal));
 
-                // serialize JSON directly to a file
-                using (StreamWriter file = File.AppendText(System.IO.Path.Combine(pathToRep, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".json")))
-                {
-                    JsonSerializer serializer = new JsonSerializer();
-                    serializer.Serialize(file, personal);
-                }
             }
         }
 
