@@ -9,6 +9,8 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using Autovokzal_v1._0;
+using System.Windows.Controls;
 
 namespace Autovokzal_v1._0
 {
@@ -84,58 +86,37 @@ namespace Autovokzal_v1._0
             db.SaveChanges();
         }
 
+        int item;
 
         private void Report_Click(object sender, RoutedEventArgs e)
         {
-            string pathToRep = System.IO.Path.GetFullPath(@"..\..\..\Reports\");
-            using (ExcelPackage excelPackage = new ExcelPackage(System.IO.Path.Combine(pathToRep, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".xlsx")))
+            Report report = new Report();
+            if (item == 1)
             {
-
-                string sqlQuery = "SELECT * FROM Personal";
-
-                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Personal");
-
-                loadExternalDataSet(sqlQuery, db, worksheet);
-
-                excelPackage.SaveAs(System.IO.Path.Combine(pathToRep, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".xlsx"));
+                report.Report_to_Excel(personalList);
             }
-
-            for (int i = 0; i < personalList.Items.Count; i++)
+            else if (item == 2)
             {
-                Personal personal = personalList.Items[i] as Personal;
-                File.AppendAllText(System.IO.Path.Combine(pathToRep, "Отчёт от " + DateOnly.FromDateTime(DateTime.Today) + ".json"), JsonConvert.SerializeObject(personal));
-
+                report.Report_to_Json(personalList);
             }
+            else
+            {
+                MessageBox.Show("Выберите формат отчёта", "Не выбран формат", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
 
-        private static void loadExternalDataSet(string sqlQuery, ApplicationContext db, ExcelWorksheet worksheet)
+        private void RF_choose_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            worksheet.Row(1).Style.Fill.PatternType = ExcelFillStyle.Solid;
-            worksheet.Cells["A1:G1"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGreen);
-            worksheet.Cells["A1"].Value = "Короткий ID";
-            worksheet.Cells["B1"].Value = "Имя";
-            worksheet.Cells["C1"].Value = "Фамилия";
-            worksheet.Cells["D1"].Value = "Отчество";
-            worksheet.Cells["E1"].Value = "Дата рождения";
-            worksheet.Cells["F1"].Value = "Отдел";
-            worksheet.Cells["G1"].Value = "Номер";
-            int i = 0;
-            while (i < db.Personals.Count())
+            ComboBox? comboBox = (ComboBox)sender;
+            ComboBoxItem? selectedItem = (ComboBoxItem)comboBox.SelectedItem;
+            if (selectedItem == xlsx)
             {
-                var p = db.Personals.Find(i + 1);
-                worksheet.Cells["A" + (i + 2)].Value = p.Short_Id;
-                worksheet.Cells["B" + (i + 2)].Value = p.Name;
-                worksheet.Cells["C" + (i + 2)].Value = p.Surname;
-                worksheet.Cells["D" + (i + 2)].Value = p.Patronymic;
-                worksheet.Cells["E" + (i + 2)].Value = p.Date;
-                worksheet.Cells["F" + (i + 2)].Value = p.Otdel;
-                worksheet.Cells["G" + (i + 2)].Value = p.Phone;
-                i++;
+                item = 1;
             }
-            using (SqlConnection connection = new SqlConnection())
-            using (SqlDataAdapter adapter = new SqlDataAdapter(sqlQuery, connection))
+            else if (selectedItem == json)
             {
-                return;
+                item = 2;
             }
         }
     }

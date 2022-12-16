@@ -39,6 +39,10 @@
             <Button Content="Добавить" Margin="10" Click="Add_Click" />
             <Button Content="Изменить" Margin="10" Click="Edit_Click"  />
             <Button Content="Удалить" Margin="10" Click="Delete_Click"  />
+            <ComboBox x:Name="RF_choose" SelectionChanged="RF_choose_SelectionChanged" Margin="10" Width="40">
+                <ComboBoxItem x:Name="xlsx">Excel</ComboBoxItem>
+                <ComboBoxItem x:Name="json">JSON</ComboBoxItem>
+            </ComboBox>
             <Button Content="Составить отчёт" Margin="10" Background="GreenYellow" Click="Report_Click"></Button>
         </StackPanel>
     </Grid>
