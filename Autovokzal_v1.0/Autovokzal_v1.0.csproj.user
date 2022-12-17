@@ -25,6 +25,9 @@
     <Compile Update="Windows\RoutesList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\SortParams.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\TechniqueEdit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -61,6 +64,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\RoutesList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\SortParams.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\TechniqueEdit.xaml">

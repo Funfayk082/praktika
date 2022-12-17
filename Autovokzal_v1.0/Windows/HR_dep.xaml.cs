@@ -11,6 +11,8 @@ using System.Windows;
 using System.Windows.Input;
 using Autovokzal_v1._0;
 using System.Windows.Controls;
+using System.ComponentModel;
+using Autovokzal_v1._0.Windows;
 
 namespace Autovokzal_v1._0
 {
@@ -117,6 +119,17 @@ namespace Autovokzal_v1._0
             else if (selectedItem == json)
             {
                 item = 2;
+            }
+        }
+
+        private void Sort_Click(object sender, RoutedEventArgs e)
+        {
+            SortParams sortParams= new SortParams();
+            personalList.Items.SortDescriptions.Clear();
+            if (sortParams.ShowDialog() == true)
+            {
+                ListBoxItem lbi = (ListBoxItem)(sortParams.selectSortParams.ItemContainerGenerator.ContainerFromIndex(sortParams.selectSortParams.SelectedIndex));
+                personalList.Items.SortDescriptions.Add(new SortDescription(lbi.Name, sortParams.ascending.IsChecked == true ? ListSortDirection.Ascending : ListSortDirection.Descending));
             }
         }
     }

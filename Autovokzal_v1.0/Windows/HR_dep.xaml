@@ -35,7 +35,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Width="800">
             <Button Content="Добавить" Margin="10" Click="Add_Click" />
             <Button Content="Изменить" Margin="10" Click="Edit_Click"  />
             <Button Content="Удалить" Margin="10" Click="Delete_Click"  />
@@ -44,6 +44,8 @@
                 <ComboBoxItem x:Name="json">JSON</ComboBoxItem>
             </ComboBox>
             <Button Content="Составить отчёт" Margin="10" Background="GreenYellow" Click="Report_Click"></Button>
+            <Button Content="Найти" Margin="250 10 10 10"></Button>
+            <Button Content="Сортировать" Margin="10 10 10 10" Click="Sort_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>

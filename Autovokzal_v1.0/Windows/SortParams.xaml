@@ -1,0 +1,33 @@
+﻿<Window x:Class="Autovokzal_v1._0.Windows.SortParams"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Autovokzal_v1._0.Windows"
+        mc:Ignorable="d"
+        Title="SortParams" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="55"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="selectSortParams" Grid.Row="0" HorizontalAlignment="Stretch">
+            <ListBoxItem Margin="10" FontSize="16" x:Name="ShortId">Короткий Id</ListBoxItem>
+            <ListBoxItem Margin="10" FontSize="16" x:Name="Surname">Фамилия</ListBoxItem>
+            <ListBoxItem Margin="10" FontSize="16" x:Name="Name">Имя</ListBoxItem>
+            <ListBoxItem Margin="10" FontSize="16" x:Name="Patronymic">Отчество</ListBoxItem>
+            <ListBoxItem Margin="10" FontSize="16" x:Name="Date">Дата рождения</ListBoxItem>
+            <ListBoxItem Margin="10" FontSize="16" x:Name="Phone">Телефон</ListBoxItem>
+            <ListBoxItem Margin="10" FontSize="16" x:Name="Otdel">Отдел</ListBoxItem>
+        </ListBox>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Right">
+            <RadioButton x:Name="descending" Content="По убыванию" FontSize="16"></RadioButton>
+            <RadioButton x:Name="ascending" Content="По возрастанию" FontSize="16"></RadioButton>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Ок" IsDefault="True" Click="Accept_Click" Background="Green" Margin="10 15" Width="45"/>
+            <Button Content="Отмена" IsCancel="True" Margin="10 15" Background="Red" Foreground="White" Width="45"/>
+        </StackPanel>
+    </Grid>
+</Window>
