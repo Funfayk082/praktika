@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Autovokzal_v1._0.Windows"
         mc:Ignorable="d"
-        Title="SortParams" Height="450" Width="800">
+        Title="Сортировка по..." Height="350" Width="200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -13,13 +13,13 @@
             <RowDefinition Height="55"></RowDefinition>
         </Grid.RowDefinitions>
         <ListBox x:Name="selectSortParams" Grid.Row="0" HorizontalAlignment="Stretch">
-            <ListBoxItem Margin="10" FontSize="16" x:Name="ShortId">Короткий Id</ListBoxItem>
-            <ListBoxItem Margin="10" FontSize="16" x:Name="Surname">Фамилия</ListBoxItem>
-            <ListBoxItem Margin="10" FontSize="16" x:Name="Name">Имя</ListBoxItem>
-            <ListBoxItem Margin="10" FontSize="16" x:Name="Patronymic">Отчество</ListBoxItem>
-            <ListBoxItem Margin="10" FontSize="16" x:Name="Date">Дата рождения</ListBoxItem>
-            <ListBoxItem Margin="10" FontSize="16" x:Name="Phone">Телефон</ListBoxItem>
-            <ListBoxItem Margin="10" FontSize="16" x:Name="Otdel">Отдел</ListBoxItem>
+            <ListBoxItem FontSize="16" x:Name="ShortId">Короткий Id</ListBoxItem>
+            <ListBoxItem FontSize="16" x:Name="Surname">Фамилия</ListBoxItem>
+            <ListBoxItem FontSize="16" x:Name="Name">Имя</ListBoxItem>
+            <ListBoxItem FontSize="16" x:Name="Patronymic">Отчество</ListBoxItem>
+            <ListBoxItem FontSize="16" x:Name="Date">Дата рождения</ListBoxItem>
+            <ListBoxItem FontSize="16" x:Name="Phone">Телефон</ListBoxItem>
+            <ListBoxItem FontSize="16" x:Name="Otdel">Отдел</ListBoxItem>
         </ListBox>
         <StackPanel Grid.Row="1" HorizontalAlignment="Right">
             <RadioButton x:Name="descending" Content="По убыванию" FontSize="16"></RadioButton>

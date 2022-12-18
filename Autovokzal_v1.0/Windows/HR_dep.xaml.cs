@@ -13,6 +13,7 @@ using Autovokzal_v1._0;
 using System.Windows.Controls;
 using System.ComponentModel;
 using Autovokzal_v1._0.Windows;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Autovokzal_v1._0
 {
@@ -130,6 +131,36 @@ namespace Autovokzal_v1._0
             {
                 ListBoxItem lbi = (ListBoxItem)(sortParams.selectSortParams.ItemContainerGenerator.ContainerFromIndex(sortParams.selectSortParams.SelectedIndex));
                 personalList.Items.SortDescriptions.Add(new SortDescription(lbi.Name, sortParams.ascending.IsChecked == true ? ListSortDirection.Ascending : ListSortDirection.Descending));
+            }
+        }
+
+        private void personalList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Personal? personal = personalList.SelectedItem as Personal;
+            if (personal is null) return;
+
+            PersSelected persSelected = new PersSelected(new Personal
+            {
+                Id = personal.Id,
+                Short_Id = personal.Short_Id,
+                Date = personal.Date,
+                Name = personal.Name,
+                Surname = personal.Surname,
+                Patronymic = personal.Patronymic,
+                Otdel = personal.Otdel,
+                Phone = personal.Phone
+            });
+
+            if (persSelected.ShowDialog() == true)
+            {
+                Personal? personal1 = db.Personals.Find(personal.Id);
+                persSelected.Short_Id.Text = personal1.Short_Id.ToString();
+                persSelected.Surname.Text = personal1.Surname;
+                persSelected.Name.Text = personal1.Name;
+                persSelected.Patronymic.Text = personal1.Patronymic;
+                persSelected.Date.Text = personal1.Date.ToString();
+                persSelected.Otdel.Text = personal1.Otdel;
+                persSelected.Phone.Text = personal1.Phone.ToString();
             }
         }
     }
