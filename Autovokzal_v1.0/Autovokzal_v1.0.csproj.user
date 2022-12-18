@@ -16,6 +16,9 @@
     <Compile Update="Windows\PersonalWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\PersSelected.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\PlaneWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\FinanceWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\PersSelected.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\ProdWindow.xaml">

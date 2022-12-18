@@ -11,7 +11,7 @@
             <RowDefinition/>
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <ListBox x:Name="personalList" ItemsSource="{Binding}" Background="#FFF3F3F3">
+        <ListBox x:Name="personalList" ItemsSource="{Binding}" Background="#FFF3F3F3" MouseDoubleClick="personalList_MouseDoubleClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
